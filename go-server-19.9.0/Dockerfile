@@ -10,8 +10,8 @@ VOLUME /home/go /godata
 RUN \
 # add our user and group first to make sure their IDs get assigned consistently,
 # regardless of whatever dependencies get added
-  addgroup -g ${GID} go && \
-  adduser -D -u ${UID} -G go go && \
+  sudo addgroup -g ${GID} go && \
+  sudo adduser -D -u ${UID} -G go go
 
 ADD https://github.com/tomzo/gocd-yaml-config-plugin/releases/download/0.11.2/yaml-config-plugin-${YAML_PLUGIN_VERSION}.jar /gocd-plugins-download/yaml-config-plugin-0.11.2.jar
 ADD https://github.com/ashwanthkumar/gocd-build-github-pull-requests/releases/download/v1.3.5/gerrit-cs-poller-1.3.5.jar /gocd-plugins-download/gerrit-cs-poller-1.3.5.jar
