@@ -12,9 +12,6 @@ ADD https://github.com/ashwanthkumar/gocd-build-github-pull-requests/releases/do
 ADD https://github.com/ashwanthkumar/gocd-build-github-pull-requests/releases/download/v1.3.5/github-pr-poller-1.3.5.jar ${PLUGIN_DIR}/github-pr-poller-1.3.5.jar
 ADD https://github.com/ashwanthkumar/gocd-build-github-pull-requests/releases/download/v1.3.5/stash-pr-poller-1.3.5.jar ${PLUGIN_DIR}/stash-pr-poller-1.3.5.jar
 
-RUN chown -R go:go /godata/plugins/external && \
-    chmod a+r /godata/plugins/external/*
-
 # Simulate cmd behavior via environment variable
 # So that users are able to provide command line arguments to gocd-server
 ENV 	COMMAND ""
