@@ -14,7 +14,6 @@ RUN set -ex && apk --no-cache add sudo
 RUN sudo mkdir -p ${PLUGIN_DIR} && \
     sudo chown -R 1000:0 ${PLUGIN_DIR}
 
-ADD https://github.com/tomzo/gocd-yaml-config-plugin/releases/download/0.11.2/yaml-config-plugin-0.11.2.jar ${PLUGIN_DIR}/yaml-config-plugin-0.11.2.jar
 ADD https://github.com/ashwanthkumar/gocd-build-github-pull-requests/releases/download/v1.3.5/gerrit-cs-poller-1.3.5.jar ${PLUGIN_DIR}/gerrit-cs-poller-1.3.5.jar
 ADD https://github.com/ashwanthkumar/gocd-build-github-pull-requests/releases/download/v1.3.5/git-fb-poller-1.3.5.jar ${PLUGIN_DIR}/git-fb-poller-1.3.5.jar
 ADD https://github.com/ashwanthkumar/gocd-build-github-pull-requests/releases/download/v1.3.5/github-pr-poller-1.3.5.jar ${PLUGIN_DIR}/github-pr-poller-1.3.5.jar
