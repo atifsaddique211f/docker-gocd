@@ -1,4 +1,4 @@
-FROM gocd/gocd-agent-docker-dind:v19.9.0
+FROM gocd/gocd-agent-alpine-3.10:v19.9.0
 LABEL authors="Atif Saddique <atif.saddique4@gmail.com>"
 
 # allow mounting ssh keys, dotfiles, and the go server config and data
@@ -12,6 +12,7 @@ RUN set -ex && apk --no-cache add sudo
 RUN \
   sudo apk --update-cache upgrade && \
   sudo apk add --update-cache git  openssh-client jq libuuid wget py-pip python3 && \
+  sudo apk add docker && \
   sudo pip install --upgrade pip && \
   sudo pip install --upgrade awscli && \
   sudo pip3 install ruamel.yaml
