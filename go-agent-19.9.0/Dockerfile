@@ -22,7 +22,7 @@ ADD sudoers/go /etc/sudoers.d/
 RUN chmod 755 /etc/sudoers.d/go
 
 # Install terraform
-ARG TERRAFORM_VERSION="0.12.10"
+ARG TERRAFORM_VERSION="0.12.12"
 RUN mkdir -p /opt/terraform && \
     wget -nc -q https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -P /opt/terraform && \
     unzip -q /opt/terraform/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /opt/terraform && \
